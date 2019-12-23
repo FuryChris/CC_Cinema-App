@@ -17,7 +17,8 @@
     "express": "^4.17.1",
     "joi": "^14.3.1",
     "mongodb": "^3.4.1",
-    "mongoose": "^5.8.2"
+    "mongoose": "^5.8.2",
+    "mongoose-type-url": "^1.0.6"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"

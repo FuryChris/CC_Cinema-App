@@ -1,49 +1,50 @@
 const mongoose = require('mongoose');
 const Joi = require('joi');
+require('mongoose-type-url');
 
 const Select_movie = new mongoose.model('Select_movie', new mongoose.Schema({
     movie_title: {
         type: String,
         required: true
     },
-    movie_length: {
+    movie_poster: {
+        work: mongoose.SchemaTypes.Url,
+        profile: mongoose.SchemaTypes.Url,
+        required: true
+    },
+    overview: {
+        type: String,
+        required: true
+    },
+    runtime: {
         type: Number,
         required: true
     },
-    movie_genre: {
+    vote_average: {
+        type: Number,
+        required: true
+    },
+    name_contry: {
         type: String,
         required: true
     },
-    movie_description: {
-        type: String,
+    movie_hall: {
+        type: Number,
         required: true
     },
-    movie_actors: {
-        type: String,
-        required: true
-    },
-    movie_contry: {
-        type: String,
-        required: true
-    },
-    movie_poster: {
-        data: Buffer,
-        contentType: String,
-        required: true
-    }
+
 }));
 
 function validateMovie(select_movie) {
     const schema = {
         movie_title: Joi.string().min(3).required(),
-        movie_length: Joi.number().min(2).required(),
-        movie_genre: Joi.string().min(3).required(),
-        movie_description: Joi.string().min(3).required(),
-        movie_actors: Joi.string().min(3).required(),
-        movie_contry: Joi.string().min(3).required(),
-        movie_poster: Joi.data(Buffer).contentType(String).min(3).required()
+        movie_poster: Joi.work(mongoose.SchemaTypes.Url).profile(mongoose.SchemaTypes.Url).required(),
+        overview: Joi.string().required(),
+        runtime: Joi.number().required(),
+        vote_average: Joi.number().precision(1).required(),
+        name_contry: Joi.string().min(3).required(),
+        movie_hall: Joi.number().required()
     };
-
     return Joi.validate(select_movie, schema);
 }
 
