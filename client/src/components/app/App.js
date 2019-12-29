@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-// import Tickets from '../pages/tickets/Tickets';
+import Tickets from '../pages/tickets/Tickets';
 import './App.css';
 
 class App extends React.Component {
@@ -15,7 +15,7 @@ class App extends React.Component {
               <h1>App</h1>
             )}
           />
-          {/* <Route path='/tickets' component={Tickets} /> */}
+          <Route path='/tickets' component={Tickets} />
         </div>
       </Router>
     );
