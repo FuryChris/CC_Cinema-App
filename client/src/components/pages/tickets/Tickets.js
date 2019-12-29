@@ -25,11 +25,17 @@ class Tickets extends React.Component {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>{this.state.tickets[0].type}</td>
-              <td>{this.state.tickets[0].price}</td>
-              <td>{this.state.tickets[0].amount}</td>
-            </tr>
+            {
+              this.state.tickets.map(ticket => {
+                return (
+                  <tr key={ticket.type}>
+                    <td>{ticket.type}</td>
+                    <td>{ticket.price}</td>
+                    <td>{ticket.amount}</td>
+                  </tr>
+                );
+              })
+            }
           </tbody>
         </table>
         <input type='submit' value='Choose your seats' />
