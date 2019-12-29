@@ -31,7 +31,9 @@ class Tickets extends React.Component {
                   <tr key={ticket.type}>
                     <td>{ticket.type}</td>
                     <td>{ticket.price}</td>
-                    <td>{ticket.amount}</td>
+                    <td>
+                      <input type='number' min='0' max='10' />
+                    </td>
                   </tr>
                 );
               })
