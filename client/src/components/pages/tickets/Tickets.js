@@ -11,6 +11,22 @@ class Tickets extends React.Component {
       { type: 'CinemaCard', price: '15 zł', amount: 0 }
     ]
   };
+  
+  handleInputChange = (e) => {
+    const ticketType = e.target.name;
+    const ticketValue = e.target.value;
+
+    this.setState(prevState => {
+      const tickets = prevState.tickets.map(ticket => {
+        if (ticket.type === ticketType) {
+          return { ...ticket, amount: ticketValue };
+        } else {
+          return ticket;
+        }
+      });
+      return { tickets };
+    });
+  }
 
   render() {
     return (
@@ -32,7 +48,14 @@ class Tickets extends React.Component {
                     <td>{ticket.type}</td>
                     <td>{ticket.price}</td>
                     <td>
-                      <input type='number' min='0' max='10' />
+                      <input 
+                        type='number' 
+                        min='0' 
+                        max='10' 
+                        name={ticket.type} 
+                        value={ticket.amount} 
+                        onChange={this.handleInputChange} 
+                      />
                     </td>
                   </tr>
                 );
