@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import './moviesList.css'
 
 class MoviesList extends React.Component {
   state = { movies: [] };
@@ -26,8 +28,14 @@ class MoviesList extends React.Component {
 
     render() {
             return this.state.movies.map((element, index) => {
-                return ( 
-                    <div className="card" key={index}>
+                return (
+					<Link className="link" key={index}  to={{
+						pathname: '/movie',
+						state: {
+							movieId : element.movieId
+						}
+					}} >
+                    <div className="card">
                         <div className="image">
                             <img src={element.moviePoster} alt=""/>
                         </div>
@@ -35,6 +43,7 @@ class MoviesList extends React.Component {
                             <div className="header">{element.movieTitle}</div>
                         </div>
                     </div>
+					</Link>
                 )})
         }
     };
