@@ -1,0 +1,14 @@
+img {
+    max-width: 250px;
+    margin: 10px;   
+}
+
+div.header {
+    text-align: center;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
