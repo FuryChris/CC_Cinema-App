@@ -1,0 +1,12 @@
+.label {
+    font-weight: bold;
+}
+
+div.time {
+    margin: 10px 30px;
+    padding:10px 50px !important;
+    background-color: rgb(228, 73, 17);
+    border-radius: 10px;
+    
+}
+

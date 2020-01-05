@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import './movieView.css'
+import DateMovie from '../dateMovie/DateMovie'
+import TimeMovie from '../timeMovie/TimeMovie'
 
 class MovieView extends React.Component {
   state = { movie_id : this.props.location.state.movieId || null, movieDetails : {} };
@@ -21,7 +23,6 @@ class MovieView extends React.Component {
         }
 	    this.setState({ movieDetails : movie});
 }
-
   
 	componentDidMount() {
 		this.onViewLoad();
@@ -29,6 +30,7 @@ class MovieView extends React.Component {
 
     render() {
                 return ( 
+                    <div className="movie">
                     <div className="ui equal width middle aligned column grid">
                         <div className="center aligned column">
                             <img src={this.state.movieDetails.moviePoster}/>
@@ -39,7 +41,12 @@ class MovieView extends React.Component {
                             <p><span className="label">Runtime : </span>{this.state.movieDetails.runtime}</p>
                             <p><span className="label">Language : </span>{this.state.movieDetails.language}</p>
                             <p><span className="label">Vote average : </span>{this.state.movieDetails.voteAverage}</p>
-                            </div>  
+                            </div>   
+                    </div>
+                    <div className="dateTime">
+                    <DateMovie/>
+                    <TimeMovie/>
+                    </div>
                     </div>
                 )
         }
