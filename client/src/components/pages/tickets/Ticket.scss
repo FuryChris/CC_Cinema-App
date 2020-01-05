@@ -1,0 +1,184 @@
+$color1: #a162be;
+$color2: #fdf8dbde;
+$color3: #121212;
+$grey: hsl(200, 10%, 85%);
+$grey-dark: hsl(200, 10%, 70%);
+
+*,::after {
+  box-sizing: border-box;
+}
+
+#cardWrap {
+  margin-top: 5em;
+  margin-left: 5em;
+  text-align:center;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+.cardMain {
+  text-align:center;
+  background: linear-gradient(to bottom, $color1 19%, $color2 21%, $color2 100%);
+  height: 27em;
+  float: left;
+  position: relative;
+  padding: 2em;
+
+  margin-bottom: 100px;
+}
+
+.cardLeft {
+  text-align:center;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius:16px;
+  width: 34em;
+}
+
+.cardRight {
+  text-align:center;
+  width: 15em;
+  border-left: .36em dashed #fff;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 1.8em;
+    height: 1.8em;
+    background: #fff;
+    border-radius: 50%;
+    left: -1em;
+  }
+  &:before {
+    top: -.8em;
+  }
+  &:after {
+  bottom: -1.6em;
+  }
+}
+
+h1 {
+  font-size: 2.4em;
+  margin-top: 0;
+  span {
+    font-weight: normal;
+  }
+}
+
+.title, .name, .seat, .time, .row {
+  text-transform: uppercase;
+  font-weight: normal;
+  h2 {
+    font-size: 1.8em;
+    color: #313131;
+    margin: 0;
+   }
+  span {
+    font-size: 1.4em;
+    color: #999999;
+  }
+}
+
+.title {
+  margin: 3em 0 0 0;
+}
+
+.name{
+  margin: 1.6em 0 0 0;
+}
+
+.time, .row, .seat {
+  margin: 1.4em 0 0 3em;
+}
+
+.seat, .time, .row {
+  float: left;
+}
+
+
+#rowcut {
+  h3 {
+    color: $color1;
+    margin: 0.2em 0 0 0;
+    font-size: 3em;
+  }
+}
+#hall {
+  h3 {
+    color: $color2;
+    margin: 0.1em 0 0 0;
+    font-size: 2.4em;
+  }
+}
+.number {
+  text-align: center;
+  text-transform: uppercase;
+  h3 {
+    color: $color1;
+    margin: 1em 0 0 0;
+    font-size: 3em;
+  }
+  span {
+    display: block;
+    color: #a2aeae;
+  }
+}
+
+.barcode {
+  height: 4em;
+  width: 0;
+  margin: 2em 0 0 -0.5em;
+  box-shadow: 2px 0px 0 2px $color3,
+  10px 0 0 2px $color3,
+  20px 0 0 2px $color3,
+  22px 0 0 2px $color3,
+  30px 0 0 2px $color3,
+  36px 0 0 2px $color3,
+  44px 0 0 2px $color3,
+  46px 0 0 2px $color3,
+  52px 0 0 2px $color3,
+  60px 0 0 2px $color3,
+  70px 0 0 2px $color3,
+  74px 0 0 2px $color3,
+  82px 0 0 2px $color3,
+  88px 0 0 2px $color3,
+  94px 0 0 2px $color3,
+  102px 0 0 2px $color3,
+  112px 0 0 2px $color3,
+  118px 0 0 2px $color3,
+  126px 0 0 2px $color3,
+  134px 0 0 2px $color3,
+  144px 0 0 2px $color3,
+  150px 0 0 2px $color3,
+  154px 0 0 2px $color3,
+  162px 0 0 2px $color3;
+}
+
+#btnTicket {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ed3330;
+  padding: 20px;
+  border-radius: 5px;
+  display: block;
+  border: none;
+  transition: all 0.4s ease 0s;
+}
+
+#btnTicket:hover {
+  background: #434343;
+  letter-spacing: 1px;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+  transition: all 0.4s ease 0s;
+  }
+
+
+#ticketPop {
+  width:100%;
+  text-align:center;
+}
