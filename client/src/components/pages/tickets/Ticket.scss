@@ -22,7 +22,7 @@ $grey-dark: hsl(200, 10%, 70%);
   height: 27em;
   float: left;
   position: relative;
-  padding: 2em;
+  padding: 1em;
 
   margin-bottom: 100px;
 }
@@ -71,12 +71,12 @@ h1 {
   text-transform: uppercase;
   font-weight: normal;
   h2 {
-    font-size: 1.8em;
+    font-size: 1.5em;
     color: #313131;
     margin: 0;
    }
   span {
-    font-size: 1.4em;
+    font-size: 1.2em;
     color: #999999;
   }
 }
@@ -90,7 +90,7 @@ h1 {
 }
 
 .time, .row, .seat {
-  margin: 1.4em 0 0 3em;
+  margin: 2em 0 0 1.5em;
 }
 
 .seat, .time, .row {
@@ -129,7 +129,7 @@ h1 {
 .barcode {
   height: 4em;
   width: 0;
-  margin: 2em 0 0 -0.5em;
+  margin: 2em 0 0 0.5em;
   box-shadow: 2px 0px 0 2px $color3,
   10px 0 0 2px $color3,
   20px 0 0 2px $color3,
@@ -176,7 +176,6 @@ h1 {
   box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
   transition: all 0.4s ease 0s;
   }
-
 
 #ticketPop {
   width:100%;
