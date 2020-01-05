@@ -1,7 +1,7 @@
 const express = require('express');
 const api = express.Router();
-import { Movies, validateMovies } from "../models/movies";
-import { MovieDetails, validateMovieDetails } from "../models/movieDetails";
+const { Movies, validateMovies } = require('../models/movies');
+const { MovieDetails, validateMovieDetails } = require('../models/movieDetails');
 
 api.get('/movies', async (req, res) => {
     try {
@@ -27,7 +27,7 @@ api.post('/movies', async (req, res) => {
     const {error} = validateMovies(req.body);
     if (error) return res.status(400).send(error.details[0].message);
     const movie = new Movie ({
-        id: req.body.id,
+        externalId: req.body.id,
         title: req.body.title,
         poster: req.body.poster
     });
@@ -44,7 +44,7 @@ api.post('/movie', async (req, res) => {
     const {error} = validateMovieDetails(req.body);
     if (error) return res.status(400).send(error.details[0].message);
     const movieDetails = new MovieDetails ({
-        id: req.body.id,
+        externalId: req.body.id,
         title: req.body.title,
         poster: req.body.poster,
         overview: req.body.overview,

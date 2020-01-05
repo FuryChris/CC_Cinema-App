@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const api = require('./routes/api');
+const api = require('./server/routes/api');
 
 dotenv.config();
 

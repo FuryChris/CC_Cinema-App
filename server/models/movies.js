@@ -10,8 +10,7 @@ const Movies = new mongoose.model('Movie', new mongoose.Schema({
         required: true
     },
     poster: {
-        work: mongoose.SchemaTypes.Url,
-        profile: mongoose.SchemaTypes.Url,
+        type: String,
         required: true
     }
 }));
@@ -25,7 +24,4 @@ function validateMovies(movies) {
     return Joi.validate(movies, schema);
 }
 
-exports.Movies = Movies;
-exports.validate = validateMovies;
-
-
+module.exports =  {Movies, validateMovies};

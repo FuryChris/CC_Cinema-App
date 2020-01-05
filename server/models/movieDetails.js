@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Joi = require('joi');
-require('mongoose-type-url');
 
 const MovieDetails = new mongoose.model('MovieDetails', new mongoose.Schema({
     externalId: {
@@ -12,8 +11,7 @@ const MovieDetails = new mongoose.model('MovieDetails', new mongoose.Schema({
         required: true
     },
     poster: {
-        work: mongoose.SchemaTypes.Url,
-        profile: mongoose.SchemaTypes.Url,
+        type: String,
         required: true
     },
     overview: {
@@ -48,5 +46,4 @@ function validateMovieDetails(movieDetails) {
     return Joi.validate(movieDetails, schema);
 }
 
-exports.Select_movie = MovieDetails;
-exports.validate = validateMovieDetails;
+module.exports = {MovieDetails, validateMovieDetails};
