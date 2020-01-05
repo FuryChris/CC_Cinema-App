@@ -17,7 +17,7 @@ const Movies = new mongoose.model('Movie', new mongoose.Schema({
 
 function validateMovies(movies) {
     const schema = {
-        id: Joi.string().required(),
+        externalId: Joi.string().required(),
         title: Joi.string().min(3).required(),
         poster: Joi.work(mongoose.SchemaTypes.Url).profile(mongoose.SchemaTypes.Url).required()
     };

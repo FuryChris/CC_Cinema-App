@@ -35,7 +35,7 @@ const MovieDetails = new mongoose.model('MovieDetails', new mongoose.Schema({
 
 function validateMovieDetails(movieDetails) {
     const schema = {
-        id: Joi.string().required(),
+        externalId: Joi.string().required(),
         title: Joi.string().min(3).required(),
         poster: Joi.work(mongoose.SchemaTypes.Url).profile(mongoose.SchemaTypes.Url).required(),
         overview: Joi.string().required(),
@@ -46,4 +46,4 @@ function validateMovieDetails(movieDetails) {
     return Joi.validate(movieDetails, schema);
 }
 
-module.exports = {MovieDetails, validateMovieDetails};
+module.exports = { MovieDetails, validateMovieDetails };
