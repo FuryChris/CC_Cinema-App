@@ -14,9 +14,9 @@ class MoviesList extends React.Component {
 		 }});
 
 		const movies = response.data.results.map(movie => {return {
-			movieId: movie.id,
-			movieTitle: movie.title,
-			moviePoster: `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+			id: movie.id,
+			title: movie.title,
+			poster: `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
 		}
 	})
 		this.setState({ movies : movies});
@@ -27,20 +27,20 @@ class MoviesList extends React.Component {
 	};
 
     render() {
-            return this.state.movies.map((element, index) => {
+            return this.state.movies.map((movie, index) => {
                 return (
 					<Link className="link" key={index}  to={{
 						pathname: '/movie',
 						state: {
-							movieId : element.movieId
+							movieId : movie.id
 						}
 					}} >
                     <div className="card">
                         <div className="image">
-                            <img src={element.moviePoster} alt=""/>
+                            <img src={movie.poster} alt=""/>
                         </div>
                         <div className="content">
-                            <div className="header">{element.movieTitle}</div>
+                            <div className="header">{movie.title}</div>
                         </div>
                     </div>
 					</Link>

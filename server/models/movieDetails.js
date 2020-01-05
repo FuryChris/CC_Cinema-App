@@ -2,12 +2,16 @@ const mongoose = require('mongoose');
 const Joi = require('joi');
 require('mongoose-type-url');
 
-const Select_movie = new mongoose.model('Select_movie', new mongoose.Schema({
-    movie_title: {
+const MovieDetails = new mongoose.model('MovieDetails', new mongoose.Schema({
+    externalId: {
+        type: Number,
+        required: true
+    },
+    title: {
         type: String,
         required: true
     },
-    movie_poster: {
+    poster: {
         work: mongoose.SchemaTypes.Url,
         profile: mongoose.SchemaTypes.Url,
         required: true
@@ -24,10 +28,6 @@ const Select_movie = new mongoose.model('Select_movie', new mongoose.Schema({
         type: Number,
         required: true
     },
-    name_contry: {
-        type: String,
-        required: true
-    },
     movie_hall: {
         type: Number,
         required: true
@@ -35,18 +35,18 @@ const Select_movie = new mongoose.model('Select_movie', new mongoose.Schema({
 
 }));
 
-function validateMovie(select_movie) {
+function validateMovieDetails(movieDetails) {
     const schema = {
-        movie_title: Joi.string().min(3).required(),
-        movie_poster: Joi.work(mongoose.SchemaTypes.Url).profile(mongoose.SchemaTypes.Url).required(),
+        id: Joi.string().required(),
+        title: Joi.string().min(3).required(),
+        poster: Joi.work(mongoose.SchemaTypes.Url).profile(mongoose.SchemaTypes.Url).required(),
         overview: Joi.string().required(),
         runtime: Joi.number().required(),
         vote_average: Joi.number().precision(1).required(),
-        name_contry: Joi.string().min(3).required(),
         movie_hall: Joi.number().required()
     };
-    return Joi.validate(select_movie, schema);
+    return Joi.validate(movieDetails, schema);
 }
 
-exports.Select_movie = Select_movie;
-exports.validate = validateMovie;
+exports.Select_movie = MovieDetails;
+exports.validate = validateMovieDetails;
