@@ -10,7 +10,8 @@ class Tickets extends React.Component {
       { type: 'senior', price: '20 zł', amount: 0 },
       { type: 'veteran', price: '18 zł', amount: 0 },
       { type: 'CinemaCard', price: '15 zł', amount: 0 }
-    ]
+    ],
+    selectedTickets: []
   };
   
   handleInputChange = (e) => {
@@ -25,7 +26,10 @@ class Tickets extends React.Component {
           return ticket;
         }
       });
-      return { tickets };
+      
+      const selectedTickets = tickets.filter(ticket => ticket.amount !== 0);
+
+      return { tickets, selectedTickets };
     });
   }
 
@@ -65,7 +69,9 @@ class Tickets extends React.Component {
           </tbody>
         </table>
         <button className='ui button primary'>
-          <Link to='/halls'>Choose your seats</Link>
+          <Link to={{ pathname: '/halls', state: { selectedTickets: this.state.selectedTickets } }}>
+            Choose your seats
+          </Link>
         </button>
       </div>
     );
