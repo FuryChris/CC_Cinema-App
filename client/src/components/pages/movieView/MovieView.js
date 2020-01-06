@@ -19,13 +19,14 @@ class MovieView extends React.Component {
             runtime: `${response.data.runtime} min`,
             language: response.data.original_language,
             voteAverage: response.data.vote_average,
-            moviePoster: `https://image.tmdb.org/t/p/w500/${response.data.poster_path}`
+            moviePoster: `https://image.tmdb.org/t/p/w500/${response.data.poster_path}`,
+            hallNumber: this.props.location.state.hallNumber,
         }
-	    this.setState({ movieDetails : movie});
+        this.setState({ movieDetails : movie});
 }
   
 	componentDidMount() {
-		this.onViewLoad();
+        this.onViewLoad();
 	};
 
     render() {

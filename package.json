@@ -21,6 +21,7 @@
     "mongodb": "^3.4.1",
     "mongoose": "^5.8.2",
     "mongoose-type-url": "^1.0.6",
+    "node-sass": "^4.13.0",
     "react-datepicker": "^2.10.1"
   },
   "devDependencies": {

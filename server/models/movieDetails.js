@@ -37,7 +37,7 @@ function validateMovieDetails(movieDetails) {
     const schema = {
         externalId: Joi.string().required(),
         title: Joi.string().min(3).required(),
-        poster: Joi.work(mongoose.SchemaTypes.Url).profile(mongoose.SchemaTypes.Url).required(),
+        poster: Joi.poster().required(),
         overview: Joi.string().required(),
         runtime: Joi.number().required(),
         vote_average: Joi.number().precision(1).required(),
