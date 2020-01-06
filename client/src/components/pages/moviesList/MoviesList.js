@@ -26,6 +26,7 @@ class MoviesList extends React.Component {
 		this.onDashboardLoad();
 	};
 
+
     render() {
             return this.state.movies.map((movie, index) => {
                 return (

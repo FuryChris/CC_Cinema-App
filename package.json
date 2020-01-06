@@ -20,7 +20,8 @@
     "joi": "^14.3.1",
     "mongodb": "^3.4.1",
     "mongoose": "^5.8.2",
-    "mongoose-type-url": "^1.0.6"
+    "mongoose-type-url": "^1.0.6",
+    "react-datepicker": "^2.10.1"
   },
   "devDependencies": {
     "kill-port": "^1.6.0",
