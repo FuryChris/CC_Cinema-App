@@ -8,19 +8,31 @@ class ShowTicket extends React.Component {
   constructor(props) {
 
     super(props);
-    this.  state = {
-    userName: 'John Smith', // <-- id użytkownika
-    seats: [22, 23, 24, 25, 26, 27], // <-- zarezerwowane siedzenia, można wrzucić do potwierdzenia rezerwacji
-    movieTitle: 'TestMovie',
-    row: ['B', 'B', 'C', 'B', 'D', 'B'],
-    hall: 'C',
-    date: '12.05.2020',
-    time: '12:00',
-    isToggleOn: true
-};
+    this.  state = {   // ZAMOCKOWANY BILET DO PRZESLANIA
+      userName: 'John Smith', 
+      seats: [22, 23, 24, 25, 26, 27],
+      movieTitle: 'This Ticket is made for Test',
+      row: ['B', 'B', 'C', 'B', 'D', 'B'],
+      hall: 'C',
+      date: '12.05.2020',
+      time: '12:00',
+      isToggleOn: true
+    };
     this.handleClick = this.handleClick.bind(this);
-    
   }
+
+        // // // // //    ComponentDidMount ---> To dodać gdy  już stan z poprzedniego elementu będzie przesyłany. Zmienić nazwy propsów na te odpowiadające stanowi rodzica
+  // componentDidMount() {
+  //   this.setState({
+  //     movieTitle: this.props.movieTitle,
+  //     seats: this.props.seats,
+  //     userName: this.props.userName,
+  //     row: this.props.row,
+  //     hall: this.props.hall,
+  //     date: this.props.date,
+  //     time: this.props.time
+  //   })
+  // }
 
   handleClick() {
     this.setState(state => ({
