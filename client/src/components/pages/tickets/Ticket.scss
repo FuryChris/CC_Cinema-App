@@ -4,96 +4,132 @@ $color3: #121212;
 $grey: hsl(200, 10%, 85%);
 $grey-dark: hsl(200, 10%, 70%);
 
-*,::after {
-  box-sizing: border-box;
-}
 
-#cardWrap {
-  margin-top: 5em;
-  margin-left: 5em;
+.cardWrap {
+  width:100%;
+  margin-top: 3em;
   text-align:center;
   color: #fff;
   font-family: sans-serif;
+  display:inline-block;
+  clear:both;
 }
 
+.divCenter {
+  display:inline-block;
+}
+
+.ticketPop {
+  width:100%;
+  margin-top: 2em;
+  text-align:center;
+  color: #fff;
+  font-family: sans-serif;
+  display:inline-block;
+  clear:both;
+}
+
+#btnTicket {
+  color: #fff !important;
+  text-align:center;
+  font-size: 20px;
+  background: #ed3330;
+  padding: 1.5em 4em 1.5em 4em;
+  border-radius: 10px;
+  display: block;
+  border: none;
+  transition: all 0.4s ease 0s;
+}
+
+#btnTicket:hover {
+  text-align:center;
+  background: #434343;
+  letter-spacing: 1px;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  box-shadow: 5px 40px -10px rgba(3, 3, 3, 0.57);
+  transition: all 0.8s ease 0s;
+  }
+
 .cardMain {
+  float:left;
+  width:100%;
   text-align:center;
   background: linear-gradient(to bottom, $color1 19%, $color2 21%, $color2 100%);
-  height: 27em;
-  float: left;
+  height: 18.9em;
   position: relative;
-  padding: 1em;
+  padding: 0.7em;
 
-  margin-bottom: 100px;
 }
 
 .cardLeft {
+  float:left;
   text-align:center;
-  border-top-left-radius: 16px;
-  border-bottom-left-radius:16px;
-  width: 34em;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius:12px;
+  width: 23.8em;
 }
 
 .cardRight {
-  text-align:center;
-  width: 15em;
+  text-align: center;
+  width: 10em;
   border-left: .36em dashed #fff;
-  border-top-right-radius: 16px;
-  border-bottom-right-radius: 16px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
   &:before,
   &:after {
     content: "";
     position: absolute;
     display: block;
-    width: 1.8em;
-    height: 1.8em;
+    width: 1.26em;
+    height: 1.26em;
     background: #fff;
     border-radius: 50%;
-    left: -1em;
+    left: -0.7em;
   }
   &:before {
-    top: -.8em;
+    top: -.56em;
   }
   &:after {
-  bottom: -1.6em;
+  bottom: -1.12em;
   }
 }
 
 h1 {
-  font-size: 2.4em;
+  font-size: 1.68em;
   margin-top: 0;
   span {
     font-weight: normal;
   }
 }
 
-.title, .name, .seat, .time, .row {
+.title, .name, .seattick, .timetick, .rowtick {
   text-transform: uppercase;
   font-weight: normal;
   h2 {
-    font-size: 1.5em;
+    font-size: 1.05em;
     color: #313131;
     margin: 0;
    }
   span {
-    font-size: 1.2em;
+    font-size: 0.84em;
     color: #999999;
   }
 }
 
 .title {
-  margin: 3em 0 0 0;
+  margin: 2.1em 0 0 0;
 }
 
 .name{
-  margin: 1.6em 0 0 0;
+  margin: 1.12em 0 0 0;
 }
 
-.time, .row, .seat {
-  margin: 2em 0 0 1.5em;
+.timetick, .rowtick, .seattick {
+  margin: 1.4em 0 0 1.05em;
 }
 
-.seat, .time, .row {
+.seattick, .timetick, .rowtick {
   float: left;
 }
 
@@ -101,15 +137,15 @@ h1 {
 #rowcut {
   h3 {
     color: $color1;
-    margin: 0.2em 0 0 0;
-    font-size: 3em;
+    margin: 0.14em 0 0 0;
+    font-size: 2.1em;
   }
 }
 #hall {
   h3 {
     color: $color2;
-    margin: 0.1em 0 0 0;
-    font-size: 2.4em;
+    margin: 0.07em 0 0 0;
+    font-size: 1.68em;
   }
 }
 .number {
@@ -117,8 +153,8 @@ h1 {
   text-transform: uppercase;
   h3 {
     color: $color1;
-    margin: 1em 0 0 0;
-    font-size: 3em;
+    margin: 0.7em 0 0 0;
+    font-size: 2.1em;
   }
   span {
     display: block;
@@ -127,57 +163,31 @@ h1 {
 }
 
 .barcode {
-  height: 4em;
+  height: 3em;
   width: 0;
-  margin: 2em 0 0 0.5em;
-  box-shadow: 2px 0px 0 2px $color3,
-  10px 0 0 2px $color3,
-  20px 0 0 2px $color3,
-  22px 0 0 2px $color3,
-  30px 0 0 2px $color3,
-  36px 0 0 2px $color3,
-  44px 0 0 2px $color3,
-  46px 0 0 2px $color3,
-  52px 0 0 2px $color3,
-  60px 0 0 2px $color3,
-  70px 0 0 2px $color3,
-  74px 0 0 2px $color3,
-  82px 0 0 2px $color3,
-  88px 0 0 2px $color3,
-  94px 0 0 2px $color3,
-  102px 0 0 2px $color3,
-  112px 0 0 2px $color3,
-  118px 0 0 2px $color3,
-  126px 0 0 2px $color3,
-  134px 0 0 2px $color3,
-  144px 0 0 2px $color3,
-  150px 0 0 2px $color3,
-  154px 0 0 2px $color3,
-  162px 0 0 2px $color3;
-}
-
-#btnTicket {
-  color: #fff !important;
-  text-transform: uppercase;
-  text-decoration: none;
-  background: #ed3330;
-  padding: 20px;
-  border-radius: 5px;
-  display: block;
-  border: none;
-  transition: all 0.4s ease 0s;
-}
-
-#btnTicket:hover {
-  background: #434343;
-  letter-spacing: 1px;
-  -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-  box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
-  transition: all 0.4s ease 0s;
-  }
-
-#ticketPop {
-  width:100%;
-  text-align:center;
+  margin: 1.4em 0 0 1.5em;
+  box-shadow: 2px 0px 0 1px $color3,
+  5px 0 0 1px $color3,
+  8px 0 0 1px $color3,
+  11px 0 0 1px $color3,
+  15px 0 0 1px $color3,
+  20px 0 0 1px $color3,
+  23px 0 0 1px $color3,
+  26px 0 0 1px $color3,
+  28px 0 0 1px $color3,
+  32px 0 0 1px $color3,
+  36px 0 0 1px $color3,
+  40px 0 0 1px $color3,
+  42px 0 0 1px $color3,
+  45px 0 0 1px $color3,
+  47px 0 0 1px $color3,
+  50px 0 0 1px $color3,
+  53px 0 0 1px $color3,
+  55px 0 0 1px $color3,
+  60px 0 0 1px $color3,
+  62px 0 0 1px $color3,
+  65px 0 0 1px $color3,
+  67px 0 0 1px $color3,
+  70px 0 0 1px $color3,
+  73px 0 0 1px $color3;
 }
