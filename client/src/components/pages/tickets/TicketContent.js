@@ -1,21 +1,46 @@
 import React from 'react';
-import './Ticket.scss'
-
+import './Ticket.scss';
 
 class TicketContent extends React.Component {
 
-  state = {
-    userName: 'John Smith', // <-- id użytkownika
-    seats: ['22', '23', '24', '25', '26', '27'], // <-- zarezerwowane siedzenia, można wrzucić do potwierdzenia rezerwacji
-    movieTitle: 'Star Wars: Episode IX - The Rise of Skywalker',
-    row: ['B', 'B', 'C', 'B', 'D', 'B'],
+constructor(props) {
+  super(props);
+  this.  state = {
+    userName: 'example User', // <-- id użytkownika
+    seats: [22], // <-- zarezerwowane siedzenia, można wrzucić do potwierdzenia rezerwacji
+    movieTitle: 'example Movie',
+    row: ['B'],
     hall: 'C',
-    date: '12.05.2020 18:00'
+    date: 'xx.xx.xxx',
+    time: 'xx:xx'
+}
 }
 
 
-      render() {
+componentDidMount() {
+  this.setState({
+    movieTitle: this.props.movieTitle,
+    seats: this.props.seats,
+    userName: this.props.userName,
+    row: this.props.row,
+    hall: this.props.hall,
+    date: this.props.date,
+    time: this.props.time
+  })
+}
 
+// componentDidMount() {
+//   this.setState({
+//     movieTitle: this.props.match.params.movie_name || 'example title', 
+//     userName: this.props.match.params.user_name || 'example user', 
+//     seats: this.props.match.params.seats || 'seats', 
+//     row: this.props.match.params.seats || 'rows', 
+//     hall: this.props.match.params.seats || 'hall'}, 
+//     date: this.props.match.params.seats || '01.01.1995 10:00',
+//   })
+// }
+
+      render() {
 
         const elements = this.state.seats;
         const items = []
@@ -51,7 +76,7 @@ class TicketContent extends React.Component {
                   </div>  
             
                   <div className="timetick">
-                    <h2>{this.state.date}</h2>
+                    <h2>{this.state.date}  {this.state.time}</h2>
                     <span>date</span>
                   </div>
                 </div>
