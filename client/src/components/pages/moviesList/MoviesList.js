@@ -13,12 +13,14 @@ class MoviesList extends React.Component {
 		  region: 'PL',
 		 }});
 
-		const movies = response.data.results.map(movie => {return {
+		const movies = response.data.results.map((movie, index) => {return {
 			id: movie.id,
 			title: movie.title,
-			poster: `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+			poster: `https://image.tmdb.org/t/p/w500/${movie.poster_path}`,
+			hall_number: ++index
 		}
-	})
+	}).slice(0,2);
+
 		this.setState({ movies : movies});
 }
   
@@ -33,7 +35,8 @@ class MoviesList extends React.Component {
 					<Link className="link" key={index}  to={{
 						pathname: '/movie',
 						state: {
-							movieId : movie.id
+							movieId : movie.id,
+							hallNumber: movie.hall_number
 						}
 					}} >
                     <div className="card">
