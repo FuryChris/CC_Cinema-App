@@ -17,11 +17,11 @@ const Movies = new mongoose.model('Movie', new mongoose.Schema({
 
 function validateMovies(movies) {
     const schema = {
-        externalId: Joi.string().required(),
+        externalId: Joi.number().required(),
         title: Joi.string().min(3).required(),
-        poster: Joi.work(mongoose.SchemaTypes.Url).profile(mongoose.SchemaTypes.Url).required()
+        poster: Joi.string().required()
     };
     return Joi.validate(movies, schema);
 }
 
-module.exports =  {Movies, validateMovies};
+module.exports = {Movies, validateMovies};
