@@ -6,8 +6,8 @@ class TicketContent extends React.Component {
 constructor(props) {
   super(props);
   this.  state = {
-    userName: 'example User', // <-- id użytkownika
-    seats: [22], // <-- zarezerwowane siedzenia, można wrzucić do potwierdzenia rezerwacji
+    userName: 'example User',
+    seats: [22],  
     movieTitle: 'example Movie',
     row: ['B'],
     hall: 'C',
@@ -15,7 +15,6 @@ constructor(props) {
     time: 'xx:xx'
 }
 }
-
 
 componentDidMount() {
   this.setState({
@@ -28,17 +27,6 @@ componentDidMount() {
     time: this.props.time
   })
 }
-
-// componentDidMount() {
-//   this.setState({
-//     movieTitle: this.props.match.params.movie_name || 'example title', 
-//     userName: this.props.match.params.user_name || 'example user', 
-//     seats: this.props.match.params.seats || 'seats', 
-//     row: this.props.match.params.seats || 'rows', 
-//     hall: this.props.match.params.seats || 'hall'}, 
-//     date: this.props.match.params.seats || '01.01.1995 10:00',
-//   })
-// }
 
       render() {
 
