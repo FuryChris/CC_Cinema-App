@@ -24,6 +24,7 @@
     "react-datepicker": "^2.10.1"
   },
   "devDependencies": {
+    "kill-port": "^1.6.0",
     "nodemon": "^2.0.2"
   }
 }
