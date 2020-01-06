@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Tickets extends React.Component {
   state = {
@@ -63,7 +64,9 @@ class Tickets extends React.Component {
             }
           </tbody>
         </table>
-        <input type='submit' value='Choose your seats' />
+        <button className='ui button primary'>
+          <Link to='/halls'>Choose your seats</Link>
+        </button>
       </div>
     );
   }
