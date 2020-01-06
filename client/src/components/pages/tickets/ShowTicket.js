@@ -1,6 +1,5 @@
 import React from 'react';
 import './Ticket.scss';
-import { Link } from 'react-router-dom';
 import TicketContent from './TicketContent';
 
 
@@ -21,10 +20,11 @@ class ShowTicket extends React.Component {
 
       render() {
                   return ( 
-                    <div id="ticketPop"> 
-                    {this.state.isToggleOn ? <button id="btnTicket" onClick={this.handleClick}>Pokaż bilet  </button> :<TicketContent />}
+                    <div className="ticketPop"> 
+                      <div className="divCenter">
+                        {this.state.isToggleOn ? <button id="btnTicket" onClick={this.handleClick}>Show Ticket(s)  </button> :<TicketContent />}
+                      </div>
                     </div>
-
                   )
           }
         }
