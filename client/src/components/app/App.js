@@ -27,6 +27,7 @@ class App extends React.Component {
           <Route path='/movie' component={MovieView}/>
           <Route path='/time' component={ShowTicket}/>
           <Route path='/tickets' component={Tickets} />
+          {/* <Route path='/halls' component={Halls} /> */}
           <Route path='/showticket' component={ShowTicket} />
         </div>
       </Router>
