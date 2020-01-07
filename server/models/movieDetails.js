@@ -30,6 +30,18 @@ const MovieDetails = new mongoose.model('MovieDetails', new mongoose.Schema({
         type: Number,
         required: true
     },
+    startDate: {
+        type: String,
+        required: true
+    },
+    timeId: {
+        type: String,
+        required: true  
+    },
+    time_movie: {
+        type: String,
+        required: true  
+    }
 
 }));
 
@@ -41,7 +53,10 @@ function validateMovieDetails(movieDetails) {
         overview: Joi.string().required(),
         runtime: Joi.number().required(),
         vote_average: Joi.number().precision(1).required(),
-        movie_hall: Joi.number().required()
+        movie_hall: Joi.number().required(),
+        startDate: Joi.string().required(),
+        timeId: Joi.string().required(),
+        time_movie: Joi.string().required()
     };
     return Joi.validate(movieDetails, schema);
 }

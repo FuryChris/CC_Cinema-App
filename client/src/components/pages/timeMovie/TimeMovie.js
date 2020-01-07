@@ -6,16 +6,16 @@ class TimeMovie extends React.Component {
 
        render() {
            var items2d = [
-            {id: "2d1", t: "9:00"},
-            {id: "2d2", t: "12:00"},
-            {id: "2d3", t: "15:00"},
-            {id: "2d4", t: "18:00"}
+            {timeId: "2d1", time_movie: "9:00"},
+            {timeId: "2d2", time_movie: "12:00"},
+            {timeId: "2d3", time_movie: "15:00"},
+            {timeId: "2d4", time_movie: "18:00"}
            ]
            var items3d = [
-            {id: "3d1", t: "9:00"},
-            {id: "3d2", t: "12:00"},
-            {id: "3d3", t: "15:00"},
-            {id: "3d4", t: "18:00"}
+            {timeId: "3d1", time_movie: "9:00"},
+            {timeId: "3d2", time_movie: "12:00"},
+            {timeId: "3d3", time_movie: "15:00"},
+            {timeId: "3d4", time_movie: "18:00"}
            ]
            return (
 
@@ -24,8 +24,12 @@ class TimeMovie extends React.Component {
                 <p><span className="label">2D</span></p>
               </div>
                 {items2d.map(el => (
-                <Link className="link" key={el.id}  to={{pathname: '/time',}}>
-                   <div className="time" key={el.id}>{el.t}</div>
+                <Link className="link" key={el.id}  to={{pathname: '/time', 
+                state: {
+                    timeId : el.timeId,
+                    time_movie: el.time_movie
+                }}}>
+                   <div className="time" key={el.id}>{el.time_movie}</div>
                 </Link>
                 ))}
          
@@ -33,8 +37,12 @@ class TimeMovie extends React.Component {
                 <p><span className="label">3D</span></p>
               </div>
                 {items3d.map(el => ( 
-                <Link className="link" key={el.id}  to={{pathname: '/time',}} >
-                   <div className="time" key={el.id}>{el.t}</div>
+                <Link className="link" key={el.id}  to={{pathname: '/time',
+                state: {
+                    timeId : el.timeId,
+                    time_movie: el.time_movie
+                }}}>
+                   <div className="time" key={el.id}>{el.time_movie}</div>
                  </Link>
                  ))}
             </div>
