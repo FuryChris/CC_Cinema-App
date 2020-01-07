@@ -14,13 +14,18 @@
   "license": "ISC",
   "dependencies": {
     "concurrently": "^5.0.2",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "helmet": "^3.21.2",
     "joi": "^14.3.1",
     "mongodb": "^3.4.1",
     "mongoose": "^5.8.2",
-    "mongoose-type-url": "^1.0.6"
+    "mongoose-type-url": "^1.0.6",
+    "node-sass": "^4.13.0",
+    "react-datepicker": "^2.10.1"
   },
   "devDependencies": {
+    "kill-port": "^1.6.0",
     "nodemon": "^2.0.2"
   }
 }

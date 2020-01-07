@@ -13,3 +13,8 @@ a, a:hover {
   color: #333;
   text-decoration: none;
 }
+
+.ui.link.cards {
+  margin: 0 auto;
+  justify-content: center;
+}
