@@ -5,7 +5,7 @@ import DateMovie from '../dateMovie/DateMovie'
 import TimeMovie from '../timeMovie/TimeMovie'
 
 class MovieView extends React.Component {
-  state = { movie_id : this.props.location.state.movieId || null, movieDetails : {} };
+  state = { movie_id : this.props.location.state.movieId || null,  movieDetails : {} };
 	onViewLoad = async () => {
 	    const response = await axios.get(`https://api.themoviedb.org/3/movie/${this.state.movie_id}?`, { params: {
 		  api_key: '0bdd84d5534b9b1f988719cdeba8dc4d',
@@ -21,6 +21,9 @@ class MovieView extends React.Component {
             voteAverage: response.data.vote_average,
             moviePoster: `https://image.tmdb.org/t/p/w500/${response.data.poster_path}`,
             hallNumber: this.props.location.state.hallNumber,
+            startDate: this.props.location.state.startDate,
+            timeId: this.props.location.state.timeId,
+            time_movie: this.props.location.state.time_movie
         }
         this.setState({ movieDetails : movie});
 }

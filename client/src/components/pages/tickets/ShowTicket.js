@@ -22,17 +22,17 @@ class ShowTicket extends React.Component {
   }
 
         // // // // //    ComponentDidMount ---> To dodać gdy  już stan z poprzedniego elementu będzie przesyłany. Zmienić nazwy propsów na te odpowiadające stanowi rodzica
-  // componentDidMount() {
-  //   this.setState({
-  //     movieTitle: this.props.movieTitle,
-  //     seats: this.props.seats,
-  //     userName: this.props.userName,
-  //     row: this.props.row,
-  //     hall: this.props.hall,
-  //     date: this.props.date,
-  //     time: this.props.time
-  //   })
-  // }
+  componentDidMount() {
+    this.setState({
+      // movieTitle: this.props.movieTitle,
+      // seats: this.props.seats,
+      // userName: this.props.userName,
+      // row: this.props.row,
+      //hall: this.props.location.state.hallNumber,
+      //date: this.props.location.state.startDate,
+      time: this.props.location.state.time_movie
+    })
+  }
 
   handleClick() {
     this.setState(state => ({
