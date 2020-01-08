@@ -24,7 +24,7 @@ class TimeMovie extends React.Component {
                 <p><span className="label">2D</span></p>
               </div>
                 {items2d.map(el => (
-                <Link className="link" key={el.id}  to={{pathname: '/time', 
+                <Link className="link" key={el.id}  to={{pathname: '/tickets', 
                 state: {
                     timeId : el.timeId,
                     time_movie: el.time_movie
@@ -37,7 +37,7 @@ class TimeMovie extends React.Component {
                 <p><span className="label">3D</span></p>
               </div>
                 {items3d.map(el => ( 
-                <Link className="link" key={el.id}  to={{pathname: '/time',
+                <Link className="link" key={el.id}  to={{pathname: '/tickets',
                 state: {
                     timeId : el.timeId,
                     time_movie: el.time_movie

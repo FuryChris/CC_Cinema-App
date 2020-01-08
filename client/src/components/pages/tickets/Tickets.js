@@ -69,7 +69,7 @@ class Tickets extends React.Component {
           </tbody>
         </table>
         <button className='ui button primary'>
-          <Link to={{ pathname: '/halls', state: { selectedTickets: this.state.selectedTickets } }}>
+          <Link to={{ pathname: '/seats', state: { selectedTickets: this.state.selectedTickets } }}>
             Choose your seats
           </Link>
         </button>

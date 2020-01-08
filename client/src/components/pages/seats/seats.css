@@ -1,0 +1,20 @@
+h1{
+    text-align:center;
+}
+.screen{
+    text-align:center;
+    background-color: rgb(228, 73, 17);
+    font-size: 40px;
+    margin: 10px;
+}
+.seat{
+    width:80px;
+    font-size: 30px;
+    padding:20px;
+    margin:10px;
+}
+.seatsContainer{
+    margin-left: 230px;
+    margin-right: 230px;
+    margin-top: 100px;
+}

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Tickets from '../pages/tickets/Tickets';
 import MoviesList from '../pages/moviesList/MoviesList';
 import MovieView from '../pages/movieView/MovieView';
+import Seats from '../pages/seats/Seats';
 //import DateMovie from '../dateMovie/DateMovie'
 //import TimeMovie from '../pages/timeMovie/TimeMovie'
 //import Halls from '../pages/halls/Halls';
@@ -27,7 +28,8 @@ class App extends React.Component {
           <Route path='/movie' component={MovieView}/>
           <Route path='/time' component={ShowTicket}/>
           <Route path='/tickets' component={Tickets} />
-          {/* <Route path='/halls' component={Halls} /> */}
+           {/* <Route path='/halls' component={Halls} />  */}
+          <Route path='/seats' component={Seats} />
           <Route path='/showticket' component={ShowTicket} />
         </div>
       </Router>
