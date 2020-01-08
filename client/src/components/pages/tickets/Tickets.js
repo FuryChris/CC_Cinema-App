@@ -11,7 +11,9 @@ class Tickets extends React.Component {
       { type: 'veteran', price: '18 zł', amount: 0 },
       { type: 'CinemaCard', price: '15 zł', amount: 0 }
     ],
-    selectedTickets: []
+    selectedTickets: [],
+    timeId: this.props.location.state.timeId,
+    time_movie: this.props.location.state.time_movie
   };
   
   handleInputChange = (e) => {
@@ -69,7 +71,8 @@ class Tickets extends React.Component {
           </tbody>
         </table>
         <button className='ui button primary'>
-          <Link to={{ pathname: '/seats', state: { selectedTickets: this.state.selectedTickets } }}>
+          <Link to={{ pathname: '/seats', state: { selectedTickets: this.state.selectedTickets, timeId : this.state.timeId,
+                    time_movie: this.state.time_movie } }}>
             Choose your seats
           </Link>
         </button>
