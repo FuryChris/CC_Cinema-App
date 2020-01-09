@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Tickets from '../pages/tickets/Tickets';
 import MoviesList from '../pages/moviesList/MoviesList';
 import MovieView from '../pages/movieView/MovieView';
+import Form from '../pages/form/Form';
 //import DateMovie from '../dateMovie/DateMovie'
 //import TimeMovie from '../pages/timeMovie/TimeMovie'
 //import Halls from '../pages/halls/Halls';
@@ -29,6 +30,7 @@ class App extends React.Component {
           <Route path='/tickets' component={Tickets} />
           {/* <Route path='/halls' component={Halls} /> */}
           <Route path='/showticket' component={ShowTicket} />
+          <Route path='/form' component={Form} />
         </div>
       </Router>
     );
