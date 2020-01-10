@@ -1,6 +1,7 @@
 import React from 'react';
 import './seats.css'
 import { Link } from 'react-router-dom';
+import ValidateSeat from './ValidateSeat';
 
 class Seats extends React.Component {
 
@@ -8,7 +9,7 @@ class Seats extends React.Component {
     super(props);
     this.  state = {
       selectedTickets: [],
-      timeid:'',
+      timeId:'',
       time_movie:'',
       chosenSeats:[],
       seats:[{ id:1, isAvailable:true,row:1, reserved:false},{ id:2, isAvailable:true,row:1,reserved:false},{ id:3, isAvailable:true,row:1,reserved:false},{ id:4, isAvailable:true,row:1,reserved:false},{ id:5, isAvailable:true,row:1,reserved:false},{ id:6, isAvailable:true,row:1,reserved:false},{ id:7, isAvailable:true,row:1,reserved:false},{ id:8, isAvailable:true,row:1,reserved:false},{ id:9, isAvailable:true,row:1,reserved:false},{ id:10, isAvailable:true,row:1,reserved:false},{ id:11, isAvailable:false,row:2,reserved:false},{ id:12, isAvailable:false,row:2,reserved:false},{ id:13, isAvailable:true,row:2,reserved:false},{ id:14, isAvailable:true,row:2,reserved:false},{ id:15, isAvailable:true,row:2,reserved:false},{ id:16, isAvailable:true,row:2,reserved:false},{ id:17, isAvailable:true,row:2,reserved:false},{ id:18, isAvailable:true,row:2,reserved:false},{ id:19, isAvailable:true,row:2,reserved:false},{ id:20, isAvailable:true,row:2,reserved:false}]
@@ -23,6 +24,7 @@ componentDidMount() {
 }
 
   handleClickButton=(e,seat)=>{
+    //ValidateSeat();
     const seatID=seat.id;
     const seatAvailable=seat.isAvailable;
     const seatReserved=seat.reserved;
@@ -40,8 +42,6 @@ let ticketAmount=0;
 this.state.selectedTickets.map(ticket=>{
   ticketAmount+=parseInt(ticket.amount);
 })
-console.log(ticketAmount)
-
 if(count<ticketAmount || seatReserved===true)
 if(seatAvailable===true){
   this.setState(prevState => {
@@ -79,10 +79,16 @@ else{this.state.chosenSeats.push(seatID)}
         <div className="btnbuy">
           <Link to={{
 						pathname: '/showticket',
-						// state: {
-						// 	movieId : movie.id,
+						 state: {
+          //   movieTitle: this.props.movieTitle,
+      seats: this.state.chosenSeats,
+  //     userName: this.props.userName,
+  //     row: this.props.row,
+  //     hall: this.props.hall,
+  //     date: this.props.date,
+      time: this.state.time_movie
 						// 	hallNumber: movie.hall_number
-						// }
+					 }
 					}}>
         <button className="buyTicket">Buy Ticket</button>
         </Link>

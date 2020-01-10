@@ -15,11 +15,16 @@ class Tickets extends React.Component {
     timeId: this.props.location.state.timeId,
     time_movie: this.props.location.state.time_movie
   };
-  
+  componentDidMount(){
+    this.setState({
+      timeId:this.props.location.state.timeId,
+      time_movie:this.props.location.state.time_movie
+    })
+  }
   handleInputChange = (e) => {
     const ticketType = e.target.name;
     const ticketValue = e.target.value;
-
+console.log(this.state.timeId)
     this.setState(prevState => {
       const tickets = prevState.tickets.map(ticket => {
         if (ticket.type === ticketType) {

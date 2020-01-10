@@ -27,6 +27,7 @@ class MovieView extends React.Component {
   
 	componentDidMount() {
         this.onViewLoad();
+        console.log(this.state.movie_id)
 	};
 
     render() {
