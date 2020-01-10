@@ -12,7 +12,8 @@ class Seats extends React.Component {
       timeId:'',
       time_movie:'',
       chosenSeats:[],
-      seats:[{ id:1, isAvailable:true,row:1, reserved:false},{ id:2, isAvailable:true,row:1,reserved:false},{ id:3, isAvailable:true,row:1,reserved:false},{ id:4, isAvailable:true,row:1,reserved:false},{ id:5, isAvailable:true,row:1,reserved:false},{ id:6, isAvailable:true,row:1,reserved:false},{ id:7, isAvailable:true,row:1,reserved:false},{ id:8, isAvailable:true,row:1,reserved:false},{ id:9, isAvailable:true,row:1,reserved:false},{ id:10, isAvailable:true,row:1,reserved:false},{ id:11, isAvailable:false,row:2,reserved:false},{ id:12, isAvailable:false,row:2,reserved:false},{ id:13, isAvailable:true,row:2,reserved:false},{ id:14, isAvailable:true,row:2,reserved:false},{ id:15, isAvailable:true,row:2,reserved:false},{ id:16, isAvailable:true,row:2,reserved:false},{ id:17, isAvailable:true,row:2,reserved:false},{ id:18, isAvailable:true,row:2,reserved:false},{ id:19, isAvailable:true,row:2,reserved:false},{ id:20, isAvailable:true,row:2,reserved:false}]
+      rowToChosenSeats:[],
+      seats:[{ id:1, isAvailable:true,row:1, reserved:false},{ id:2, isAvailable:true,row:1,reserved:false},{ id:3, isAvailable:true,row:1,reserved:false},{ id:4, isAvailable:true,row:1,reserved:false},{ id:5, isAvailable:true,row:1,reserved:false},{ id:6, isAvailable:true,row:1,reserved:false},{ id:7, isAvailable:true,row:1,reserved:false},{ id:8, isAvailable:true,row:1,reserved:false},{ id:9, isAvailable:true,row:1,reserved:false},{ id:10, isAvailable:true,row:1,reserved:false},{ id:11, isAvailable:false,row:1,reserved:false},{ id:12, isAvailable:false,row:1,reserved:false},{ id:13, isAvailable:true,row:2,reserved:false},{ id:14, isAvailable:true,row:2,reserved:false},{ id:15, isAvailable:true,row:2,reserved:false},{ id:16, isAvailable:true,row:2,reserved:false},{ id:17, isAvailable:true,row:2,reserved:false},{ id:18, isAvailable:true,row:2,reserved:false},{ id:19, isAvailable:true,row:2,reserved:false},{ id:20, isAvailable:true,row:2,reserved:false}]
   }
 }
 componentDidMount() {
@@ -57,9 +58,12 @@ if(seatAvailable===true){
   if(seatReserved===true){
     let tempSeat=[...this.state.chosenSeats];
     tempSeat.splice( tempSeat.indexOf(seatID), 1 );
-    this.setState({chosenSeats:tempSeat})
+    let temprow=[...this.state.rowToChosenSeats];
+    temprow.splice( temprow.indexOf(seatID), 1 );
+    this.setState({chosenSeats:tempSeat,rowToChosenSeats:temprow})
   }
-else{this.state.chosenSeats.push(seatID)}
+else{this.state.chosenSeats.push(seatID);
+this.state.rowToChosenSeats.push(seat.row);}
    }
   }
   render() {
@@ -83,7 +87,7 @@ else{this.state.chosenSeats.push(seatID)}
           //   movieTitle: this.props.movieTitle,
       seats: this.state.chosenSeats,
   //     userName: this.props.userName,
-  //     row: this.props.row,
+       row: this.state.rowToChosenSeats,
   //     hall: this.props.hall,
   //     date: this.props.date,
       time: this.state.time_movie
