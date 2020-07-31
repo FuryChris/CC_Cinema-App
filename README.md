@@ -1,10 +1,10 @@
 # Cinema App
 
-> Project 5 
+## Project realized as part of CodersCamp bootcamp.
 
 ## Quick Start
 
-``` bash
+```bash
 # Install dependencies for server
 npm install
 
