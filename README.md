@@ -1,6 +1,6 @@
 # Cinema App
 
-## Project realized as part of CodersCamp bootcamp.
+> Project realized as part of CodersCamp bootcamp.
 
 ## Quick Start
 
